@@ -10,7 +10,8 @@ angular.module('HappyTrailIonic')
   .controller('HomeController', function($scope, TrailService, $location, $timeout) {
     $scope.mySearch = {
       city: '',
-      country: 'Australia'
+      country: 'Australia',
+      radius: 10
     };
 
     $scope.searchStart = false;

@@ -15,7 +15,7 @@ angular.module('HappyTrailIonic')
     var searchTrails = function(mySearch){
       var req = {
         method: 'GET',
-        url: 'https://trailapi-trailapi.p.mashape.com/?q[country_cont]=' + mySearch.country + '&q[city_cont]=' + mySearch.city,
+        url: 'https://trailapi-trailapi.p.mashape.com/?q[country_cont]=' + mySearch.country + '&q[city_cont]=' + mySearch.city + '&radius=' + mySearch.radius,
 				headers: {
 					'X-Mashape-Key': x_mashape_key
 				}

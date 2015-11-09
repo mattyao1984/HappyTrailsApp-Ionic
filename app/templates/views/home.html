@@ -1,7 +1,7 @@
 <ion-view>
     <ion-header-bar align-title="center" class="bar-positive">
         <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
-        <h1 class="title">Happy Trail App</h1>
+        <h1 class="title">Trail Finder</h1>
     </ion-header-bar>
 
     <ion-content class="home">
@@ -13,6 +13,14 @@
         <label class="item item-input item-floating-label">
           <span class="input-label">Country:</span>
           <input type="text" placeholder="Enter the name of the country..." ng-model="mySearch.country">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Radius: {{ mySearch.radius }}km</span>
+          <div class="range">
+            <span>0</span>
+              <input type="range" name="volume" min="0" max="100" ng-model="mySearch.radius">
+            </span>100</span>
+          </div>
         </label>
         <button class="button button-positive button-block" ng-click="searchTrails()" ng-disabled="searchStart">
           Search

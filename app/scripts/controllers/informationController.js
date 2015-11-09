@@ -15,8 +15,6 @@ angular.module('HappyTrailIonic')
     });
 
     var Initialize = function(){
-      console.log('test');
-      console.log($scope.thisTrail);
       var myLatlng = new google.maps.LatLng($scope.thisTrail.lat, $scope.thisTrail.lon);
       var mapOptions = {
         center: myLatlng,
@@ -31,8 +29,6 @@ angular.module('HappyTrailIonic')
           map: map,
           title: $scope.thisTrail.name
         });
-
-      console.log(myLatlng);
 
       $scope.map = map;
     };
