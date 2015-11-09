@@ -20,7 +20,7 @@ angular.module('HappyTrailIonic')
       TrailService.searchTrails($scope.mySearch).then(function(response){
         $scope.searchStart = false;
         TrailService.setResults(response.data);
-        console.log('results', response);
+
         $timeout(function(){
           $location.path('/app/trails');
         }, 100);
