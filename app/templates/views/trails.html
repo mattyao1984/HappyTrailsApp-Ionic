@@ -1,0 +1,14 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-positive">
+        <button class="button button-icon icon ion-arrow-left-a" ng-click="goHome()"></button>
+        <h1 class="title">My Trails</h1>
+    </ion-header-bar>
+
+    <ion-content class="trails">
+      <div class="list" ng-repeat="trail in allTrails.places">
+          <a class="item" href="#/app/information/{{ trail.unique_id }}">
+            <h2 ng-bind="trail.name"></h2>
+          </a>
+      </div>
+    </ion-content>
+</ion-view>

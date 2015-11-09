@@ -1,0 +1,26 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-positive">
+        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+        <h1 class="title">Happy Trail App</h1>
+    </ion-header-bar>
+
+    <ion-content class="home">
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">City / Town:</span>
+          <input type="text" placeholder="Enter the name of the city / town..." ng-model="mySearch.city">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Country:</span>
+          <input type="text" placeholder="Enter the name of the country..." ng-model="mySearch.country">
+        </label>
+        <button class="button button-positive button-block" ng-click="searchTrails()" ng-disabled="searchStart">
+          Search
+        </button>
+      </div>
+
+      <label class="item-input spinnerWrap"  ng-if="searchStart">
+        <ion-spinner icon="spiral"></ion-spinner><span class="input-label">Searching...</span>
+      </label>
+    </ion-content>
+</ion-view>

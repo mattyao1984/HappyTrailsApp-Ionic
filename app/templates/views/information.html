@@ -1,0 +1,53 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-positive">
+        <button class="button button-icon icon ion-arrow-left-a" ng-click="goBack()"></button>
+        <h1 class="title" ng-bind="thisTrail.name"></h1>
+    </ion-header-bar>
+
+    <ion-content class="information">
+      <div class="card">
+        <div class="item item-divider">
+          Directions
+        </div>
+        <div class="item item-text-wrap">
+          <p ng-bind-html="thisTrail.directions | to_trusted"></p>
+        </div>
+        <div class="item item-divider">
+          <span>Latitude: {{ thisTrail.lat }}</span>
+          <span>Longitude: {{ thisTrail.lon }}</span>
+        </div>
+      </div>
+
+      <div class="list card" ng-repeat="activity in thisTrail.activities">
+        <div class="item item-divider card-header" ng-bind="activity.activity_type_name">
+        </div>
+        <div class="item item-body">
+          <img class="full-image" ng-src="{{ activity.thumbnail }}" ng-if="activity.thumbnail != null">
+          <p ng-bind-html="activity.description | to_trusted"></p>
+          <p>
+            <a href="#" class="subdued">1 Like</a>
+            <a href="#" class="subdued">5 Comments</a>
+          </p>
+        </div>
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a class="tab-item" href="#">
+            <i class="icon ion-thumbsup"></i>
+            Like
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-chatbox"></i>
+            Comment
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-share"></i>
+            Share
+          </a>
+        </div>
+
+        <div class="item item-divider">
+          <span>Rating: {{ activity.rating }}</span>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>
